@@ -1,0 +1,50 @@
+{% extends "base.html.j2" %}
+{% block body %}
+    <div class="container">
+        <h2 class="text-center alert-danger">
+            code with ajax
+        </h2>
+        <div class="row">
+            <div class="col-sm-4">
+                <form action="" method="post">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                    {{ as_crispy(form) }}
+                    <button id="savetbn" type="submit">uplode data</button>
+                </form>
+            </div>
+            <div class="col-sm-5">
+                <table>
+                    <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Number</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for foo in data %}
+                        <tr>
+                            <td>{{ foo.name }}</td>
+                            <td>{{ foo.number }}</td>
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        $("#savetbn").click(function () {
+            console.log("save button working")
+            var name = $("#id_name").val();
+            var num = $("#id_number").val();
+            console.log(name);
+            console.log(num);
+
+        });
+    </script>
+
+{% endblock %}
