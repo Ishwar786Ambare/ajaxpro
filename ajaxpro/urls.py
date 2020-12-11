@@ -28,6 +28,8 @@ urlpatterns = [
 
 
     path('data/', data_view,name='data'),
+    # path('savedata/', savedata,name='savedata'),
+
     path('get_data/', get_data,name='get_data'),
 
 

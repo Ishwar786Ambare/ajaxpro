@@ -4,6 +4,8 @@ from django.shortcuts import render
 
 from django.http import JsonResponse, HttpResponse
 from django.core import serializers
+from django.views.decorators.csrf import csrf_exempt
+
 from .forms import FriendForm, FormData
 from .models import Friend, Data
 
