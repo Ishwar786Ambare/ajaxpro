@@ -41,9 +41,14 @@
             console.log("save button working")
             var name = $("#id_name").val();
             var num = $("#id_number").val();
-            console.log(name);
-            console.log(num);
-
+            if (name == "") {
+                console.log("please add here name")
+            } else if (num == '') {
+                console.log("please add here some number")
+            } else {
+                console.log(name);
+                console.log(num);
+            }
         });
     </script>
 
